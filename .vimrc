@@ -121,3 +121,12 @@ nnoremap <C-f> :NERDTreeFind<CR>
 " ONLY FOR VIM WSL COPY TO CLIPBOARD
 " vmap <leader>y y:new ~/.vimbuf<CR>VGp:x<CR> \|:!cat ~/.vimbuf \| clip.exe<CR><CE>
 " ONLY FOR VIM WSL COPY TO CLIPBOARD
+
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path
+if executable(s:clip)
+  augroup WSLYank
+    autocmd!
+    autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+  augroup END
+endif
