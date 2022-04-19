@@ -20,6 +20,9 @@ set incsearch
 set ignorecase
 set smartcase
 set hidden
+set visualbell
+set cursorline
+set noerrorbells
 
 set t_Co=256
 set t_u7=
@@ -64,6 +67,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 " Plugins-End
 
